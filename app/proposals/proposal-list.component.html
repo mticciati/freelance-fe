@@ -1,0 +1,17 @@
+<div class="container">
+
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action flex-column align-items-start active">
+      <h1>{{ pageTitle }}</h1>
+    </a>
+    <div *ngFor="let p of proposals" (click)="goToShow(p)" class="list-group-item list-group-item-action pointer">
+      <a class="proposal-link">
+        <h5 class="list-group-item-heading">{{ p.customer }}</h5>
+        <p class="list-group-item-text">
+          {{ p.hourly_rate * p.estimated_hours | currency:'USD':true:'.0' }}
+        </p>
+      </a>
+    </div>
+  </div>
+
+</div>

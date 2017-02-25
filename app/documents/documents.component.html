@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <h1 class="headline">{{ pageTitle }}</h1>
+
+  <div class="card col-xs-10 col-xs-offset-1" *ngFor="let doc of documents">
+    <img class="card-img-top" src="{{ doc.image_url }}" alt="Card image cap" width="100%">
+     <div class="card-block">
+      <h4 class="card-title">{{ doc.title }}</h4>
+      <p class="card-text">{{ doc.description }}</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><small><strong>Last Updated:</strong>&nbsp;{{ doc.updated_at | date }}</small></li>
+      </ul>
+      <div class="card-block">
+        <a href="{{ doc.file_url }}" class="card-link" class="btn btn-primary">Download File</a>
+        <a href="{{ doc.image_url }}" class="card-link btn btn-success">Image</a>
+      </div>
+    </div>
+  </div>
+</div>
